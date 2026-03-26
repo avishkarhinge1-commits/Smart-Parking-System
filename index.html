@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Parking System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Smart Parking System</h1>
+<h3>Available Slots: <span id="count">5</span></h3>
+
+<div class="parking">
+    <div class="slot" onclick="toggle(this)">Slot 1</div>
+    <div class="slot" onclick="toggle(this)">Slot 2</div>
+    <div class="slot" onclick="toggle(this)">Slot 3</div>
+    <div class="slot" onclick="toggle(this)">Slot 4</div>
+    <div class="slot" onclick="toggle(this)">Slot 5</div>
+</div>
+
+<script>
+let available = 5;
+
+function toggle(slot){
+    if(slot.classList.contains("occupied")){
+        slot.classList.remove("occupied");
+        available++;
+    } else {
+        slot.classList.add("occupied");
+        available--;
+    }
+    document.getElementById("count").innerText = available;
+}
+</script>
+
+</body>
+</html>
